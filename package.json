@@ -10,7 +10,7 @@
     "virtual assets"
   ],
   "repository": "https://github.com/zheeeng/vite-plugin-virtual-plain-text",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "license": "MIT",
   "main": "index.js",
   "scripts": {

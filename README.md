@@ -22,12 +22,6 @@ Take the project's legal file `LICENSE` as an example:
 
 import { defineConfig } from 'vite';
 
-/**
- * @param match
- * Regular expression in string or Regexp type,
- *  or a match predicate  (this: vite transform context, code: string, id: file name string) => void
- * @returns transformed code
- */
 import plainText from 'vite-plugin-virtual-plain-text';
 
 export default defineConfig({
