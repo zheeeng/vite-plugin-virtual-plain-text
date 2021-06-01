@@ -61,4 +61,4 @@ MIT
 
 ## Alternative
 
-Virtual asset Loader: [vite-plugin-plain-text](https://www.npmjs.com/package/vite-plugin-plain-text)
+Plain text transformer: [vite-plugin-plain-text](https://www.npmjs.com/package/vite-plugin-plain-text)
