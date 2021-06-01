@@ -50,7 +50,7 @@ For Typescript user you could add the typing reference in your workspace declara
 
 ```ts
 // declaration.d.ts
-/// <reference types="vite-plugin-virtual-plain-text" />
+/// <reference types="vite-plugin-virtual-plain-text/virtual-assets" />
 ```
 
 ## License

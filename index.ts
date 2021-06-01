@@ -21,7 +21,7 @@ export default function plainText (virtualFileId = defaultVirtualFileId) {
       if (id.indexOf(virtualFileId) === 0) {
         const filePath = path.resolve(id.replace(virtualFileId, ''))
         const content = await fs.promises.readFile(filePath, { encoding: 'utf-8' })
-        return `export const content = ${JSON.stringify(content)}`
+        return `export const plainText = ${JSON.stringify(content)}`
       }
     }
   }
