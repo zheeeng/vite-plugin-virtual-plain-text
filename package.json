@@ -1,0 +1,28 @@
+{
+  "name": "vite-plugin-virtual-plain-text",
+  "version": "1.0.0",
+  "main": "index.js",
+  "typing": "type.d.ts",
+  "author": "Zheeeng <hi@zheeeng.me>",
+  "license": "MIT",
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "tsc -p tsconfig.json"
+  },
+  "files": [
+    "*.js",
+    "*.d.ts"
+  ],
+  "types": "./lib/react-app.d.ts",
+  "repository": "https://github.com/zheeeng/vite-plugin-virtual-plain-text",
+  "keywords": [
+    "vite",
+    "plugin",
+    "plain text",
+    "virtual workspace",
+    "virtual assets"
+  ],
+  "devDependencies": {
+    "@types/node": "^15.6.1"
+  }
+}
