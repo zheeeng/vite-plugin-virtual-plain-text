@@ -2,7 +2,7 @@
 
 [![NPM](https://nodei.co/npm/vite-plugin-virtual-plain-text.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/vite-plugin-virtual-plain-text/)
 
-![example workflow](https://github.com/zheeeng/vite-plugin-virtual-plain-text/actions/workflows/publish.yml/badge.svg)
+![publish workflow](https://github.com/zheeeng/vite-plugin-virtual-plain-text/actions/workflows/publish.yml/badge.svg)
 [![npm version](https://img.shields.io/npm/v/vite-plugin-virtual-plain-text.svg)](https://www.npmjs.com/package/vite-plugin-virtual-plain-text)
 
 A Vite plugin loads file as plain text from virtual assets workspace.
