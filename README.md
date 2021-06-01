@@ -5,7 +5,7 @@
 ![example workflow](https://github.com/zheeeng/vite-plugin-virtual-plain-text/actions/workflows/publish.yml/badge.svg)
 [![npm version](https://img.shields.io/npm/v/vite-plugin-virtual-plain-text.svg)](https://www.npmjs.com/package/vite-plugin-virtual-plain-text)
 
-A Vite plugin loads file as plain text from virtual assets workspace
+A Vite plugin loads file as plain text from virtual assets workspace.
 
 ## Install
 
@@ -13,7 +13,7 @@ A Vite plugin loads file as plain text from virtual assets workspace
 yarn add -D vite-plugin-virtual-plain-text (or by npm)
 ```
 
-## Usage
+## Example
 
 Take the project's legal file `LICENSE` as an example:
 
@@ -37,6 +37,8 @@ export default defineConfig({
   ],
 });
 ```
+
+Load the content of `LICENSE` file under the project root:
 
 ```js
 // component.js
