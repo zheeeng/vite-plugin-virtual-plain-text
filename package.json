@@ -1,9 +1,18 @@
 {
   "name": "vite-plugin-virtual-plain-text",
-  "version": "1.0.4",
-  "main": "index.js",
   "author": "Zheeeng <hi@zheeeng.me>",
+  "description": "A Vite plugin loads file as plain text from virtual assets workspace.",
+  "keywords": [
+    "vite",
+    "plugin",
+    "plain text",
+    "virtual workspace",
+    "virtual assets"
+  ],
+  "repository": "https://github.com/zheeeng/vite-plugin-virtual-plain-text",
+  "version": "1.0.5",
   "license": "MIT",
+  "main": "index.js",
   "scripts": {
     "prepublishOnly": "npm run build",
     "build": "tsc -p tsconfig.json"
@@ -11,14 +20,6 @@
   "files": [
     "*.js",
     "*.d.ts"
-  ],
-  "repository": "https://github.com/zheeeng/vite-plugin-virtual-plain-text",
-  "keywords": [
-    "vite",
-    "plugin",
-    "plain text",
-    "virtual workspace",
-    "virtual assets"
   ],
   "devDependencies": {
     "@types/node": "^15.6.1"
