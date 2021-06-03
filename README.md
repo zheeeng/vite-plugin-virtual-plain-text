@@ -7,6 +7,8 @@
 
 A Vite plugin loads file as plain text from the virtual assets workspace.
 
+> This plugin resolves a virtual assets path file as a local file path against the project root.
+
 ## Install
 
 ```bash
@@ -47,6 +49,35 @@ For Typescript user you could add the typing reference in your workspace declara
 ```ts
 // declaration.d.ts
 /// <reference types="vite-plugin-virtual-plain-text/virtual-assets" />
+```
+
+## Advanced
+
+You can configure the virtual assets' workspace name
+
+```ts
+// vite.config.(t|j)s
+
+import { defineConfig } from 'vite';
+
+import plainText from 'vite-plugin-virtual-plain-text';
+
+export default defineConfig({
+  plugins: [
+    // passing string type Regular expression
+    plainText('@my-virtual-plain-text-workspace:/'),
+  ],
+});
+```
+
+For Typescript user, the type declaration should be correspondingly added:
+
+```ts
+// declaration.d.ts
+
+declare module '@my-virtual-plain-text-workspace:/*' {
+    export const plainText: string
+}
 ```
 
 ## License
