@@ -1,7 +1,8 @@
 import * as path from 'path'
 import * as fs from 'fs'
 
-const defaultVirtualFileId = '@virtual:plain-text/'
+const defaultVirtualNamespace = '@virtual:plain-text/'
+const getResolvedVirtualNamespace = (virtualNamespace: string) => `@resolved${virtualNamespace}`
 
 /**
  * @param match
@@ -9,18 +10,21 @@ const defaultVirtualFileId = '@virtual:plain-text/'
  *  or a match predicate  (this: vite transform context, code: string, id: file name string) => void
  * @returns transformed code
  */
-export default function plainText (virtualFileId = defaultVirtualFileId) {
+export default function plainText (virtualNamespace = defaultVirtualNamespace) {
+  const resolvedVirtualNamespace = getResolvedVirtualNamespace(virtualNamespace)
+
   return {
     name: 'virtual-plain-text', // required, will show up in warnings and errors
-    resolveId(id: string) {
-      if (id.indexOf(virtualFileId) === 0) {
-        return `${virtualFileId}${encodeURIComponent(id.slice(virtualFileId.length))}`
+    resolveId (id: string) {
+      if (id.indexOf(virtualNamespace) === 0) {
+        const encodedLoadId = encodeURIComponent(id.slice(virtualNamespace.length))
+        return `${resolvedVirtualNamespace}${encodedLoadId}`
       }
     },
-    async load(id: string) {
-      if (id.indexOf(virtualFileId) === 0) {
-        const loadId = decodeURIComponent(id.slice(virtualFileId.length))
-        const filePath = path.resolve(loadId)
+    async load (maybeEncodedId: string) {
+      if (maybeEncodedId.indexOf(resolvedVirtualNamespace) === 0) {
+        const decodedLoadId = decodeURIComponent(maybeEncodedId.slice(resolvedVirtualNamespace.length))
+        const filePath = path.resolve(decodedLoadId)
         const content = await fs.promises.readFile(filePath, { encoding: 'utf-8' })
         return `export const plainText = ${JSON.stringify(content)}`
       }
