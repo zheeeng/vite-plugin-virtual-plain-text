@@ -6,3 +6,4 @@ node_modules
 *.d.ts
 yarn-error.log
 !virtual-assets.d.ts
+index.jss
