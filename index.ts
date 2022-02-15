@@ -18,7 +18,7 @@ export default function plainText (virtualFileId = defaultVirtualFileId) {
       }
     },
     async load(id: string) {
-      if (id.indexOf(virtualFileId)) {
+      if (id.indexOf(virtualFileId) === 0) {
         const loadId = decodeURIComponent(id.slice(virtualFileId.length))
         const filePath = path.resolve(loadId)
         const content = await fs.promises.readFile(filePath, { encoding: 'utf-8' })
