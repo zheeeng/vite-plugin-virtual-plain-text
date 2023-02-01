@@ -5,19 +5,27 @@
 ![publish workflow](https://github.com/zheeeng/vite-plugin-virtual-plain-text/actions/workflows/publish.yml/badge.svg)
 [![npm version](https://img.shields.io/npm/v/vite-plugin-virtual-plain-text.svg)](https://www.npmjs.com/package/vite-plugin-virtual-plain-text)
 
-A Vite plugin loads file as plain text from the virtual assets workspace.
+A Vite plugin to load file content as plain text from the virtual assets workspace.
 
-> This plugin resolves a virtual assets path file as a local file path against the project root.
+> This plugin maps virtual asset file paths to local file paths based on the project root.
 
 ## Install
 
 ```bash
-yarn add -D vite-plugin-virtual-plain-text (or by npm)
+pnpm i -D vite-plugin-virtual-plain-text
 ```
 
-## Example Usage
+```bash
+yarn add -D vite-plugin-virtual-plain-text
+```
 
-Treat all the import paths from virtual as plain text:
+```bash
+npm install --save-dev vite-plugin-virtual-plain-text
+```
+
+## Basic Usage
+
+To treat all virtual asset imports as plain text:
 
 ```ts
 // vite.config.(t|j)s
@@ -33,7 +41,7 @@ export default defineConfig({
 });
 ```
 
-Then you can load the content of `LICENSE` file under the project root:
+You can now load the content of the `LICENSE` file in the project root:
 
 ```js
 // component.js
@@ -43,14 +51,14 @@ import LICENSE from '@virtual:plain-text/LICENSE'
 console.log(LICENSE)
 ```
 
-For Typescript user you could add the typing reference in your workspace declaration file:
+For TypeScript users, you can create a `.dts` file manually for referencing the virtual assets declaration:
 
 ```ts
 // declaration.d.ts
 /// <reference types="vite-plugin-virtual-plain-text/virtual-assets" />
 ```
 
-Or try the auto declaration file generation feature, see the `Advanced` chapter below.
+Or, you can use the auto declaration file generation feature, as described in the `Advanced Usage` section below.
 
 ## Advanced Usage
 
@@ -81,7 +89,7 @@ export default defineConfig({
 });
 ```
 
-For Typescript user, add the type declaration likes below:
+For TypeScript users, add a module declaration:
 
 ```ts
 // declaration.d.ts
@@ -91,7 +99,7 @@ declare module '@my-virtual-plain-text-workspace/*' {
 }
 ```
 
-Or configure the auto generation:
+Or, configure auto generation:
 
 ```ts
 // vite.config.(t|j)s
@@ -110,7 +118,7 @@ export default defineConfig({
 
 `virtual-workspace-declaration.d.ts` will be created in the project's root directory.
 
-### Enable Named Export
+### Enabling Named Export
 
 ```ts
 // vite.config.(t|j)s

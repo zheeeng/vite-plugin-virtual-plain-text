@@ -1,6 +1,6 @@
-import { eeee as LICENSE } from '@my-virtual-plain-text-workspace/playground/LICENSE'
-import { eeee as Lorem } from '@my-virtual-plain-text-workspace/playground/lorem-ipsum.text'
-import { eeee as Siren } from '@my-virtual-plain-text-workspace/playground/siren.glsl'
+import LICENSE from '@my-virtual-plain-text-workspace/playground/LICENSE'
+import Lorem from '@my-virtual-plain-text-workspace/playground/lorem-ipsum.text'
+import Siren from '@my-virtual-plain-text-workspace/playground/siren.glsl'
 
 console.log(LICENSE, LICENSE)
 
