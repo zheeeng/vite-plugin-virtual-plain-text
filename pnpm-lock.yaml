@@ -1,10 +1,13 @@
-devDependencies:
-  '@types/node': 15.14.9
-lockfileVersion: 5.2
-packages:
-  /@types/node/15.14.9:
-    dev: true
-    resolution:
-      integrity: sha512-qjd88DrCxupx/kJD5yQgZdcYKZKSIGBVDIBE1/LTGcNm3d2Np/jxojkdePDdfnBHJc5W7vSMpbJ1aB7p/Py69A==
+lockfileVersion: 5.3
+
 specifiers:
   '@types/node': ^15.14.9
+
+devDependencies:
+  '@types/node': 15.14.9
+
+packages:
+
+  /@types/node/15.14.9:
+    resolution: {integrity: sha512-qjd88DrCxupx/kJD5yQgZdcYKZKSIGBVDIBE1/LTGcNm3d2Np/jxojkdePDdfnBHJc5W7vSMpbJ1aB7p/Py69A==}
+    dev: true
