@@ -14,14 +14,18 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
+    "dev": "vite playground",
     "prepublishOnly": "npm run build",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsup"
   },
   "files": [
     "*.js",
     "*.d.ts"
   ],
   "devDependencies": {
-    "@types/node": "^15.14.9"
+    "@types/node": "^18.11.18",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.5",
+    "vite": "^2.3.4"
   }
 }

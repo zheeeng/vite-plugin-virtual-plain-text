@@ -15,9 +15,9 @@ A Vite plugin loads file as plain text from the virtual assets workspace.
 yarn add -D vite-plugin-virtual-plain-text (or by npm)
 ```
 
-## Example
+## Example Usage
 
-Take the project's legal file `LICENSE` as an example:
+Treat all the import paths from virtual as plain text:
 
 ```ts
 // vite.config.(t|j)s
@@ -28,18 +28,17 @@ import plainText from 'vite-plugin-virtual-plain-text';
 
 export default defineConfig({
   plugins: [
-    // passing string type Regular expression
     plainText(),
   ],
 });
 ```
 
-Load the content of `LICENSE` file under the project root:
+Then you can load the content of `LICENSE` file under the project root:
 
 ```js
 // component.js
 
-import { plainText as LICENSE } from '@virtual:plain-text/LICENSE'
+import LICENSE from '@virtual:plain-text/LICENSE'
 
 console.log(LICENSE)
 ```
@@ -51,9 +50,21 @@ For Typescript user you could add the typing reference in your workspace declara
 /// <reference types="vite-plugin-virtual-plain-text/virtual-assets" />
 ```
 
-## Advanced
+Or try the auto declaration file generation feature, see the `Advanced` chapter below.
 
-You can configure the virtual assets' workspace name
+## Advanced Usage
+
+### Options Reference
+
+```ts
+type PlainTextOptions = {
+  virtualNamespace?: string,
+  namedExport?: string | false,
+  dtsAutoGen?: string | false,
+}
+```
+
+### Configure the virtual assets' workspace
 
 ```ts
 // vite.config.(t|j)s
@@ -64,20 +75,64 @@ import plainText from 'vite-plugin-virtual-plain-text';
 
 export default defineConfig({
   plugins: [
-    // passing string type Regular expression
-    plainText('@my-virtual-plain-text-workspace:/'),
+    // passing the custom virtual workspace name
+    plainText({ virtualNamespace: '@my-virtual-plain-text-workspace/' }),
   ],
 });
 ```
 
-For Typescript user, the type declaration should be correspondingly added:
+For Typescript user, add the type declaration likes below:
 
 ```ts
 // declaration.d.ts
 
-declare module '@my-virtual-plain-text-workspace:/*' {
+declare module '@my-virtual-plain-text-workspace/*' {
     export const plainText: string
 }
+```
+
+Or configure the auto generation:
+
+```ts
+// vite.config.(t|j)s
+
+import { defineConfig } from 'vite';
+
+import plainText from 'vite-plugin-virtual-plain-text';
+
+export default defineConfig({
+  plugins: [
+    // passing the custom dts file pathname
+    plainText({ virtualNamespace: '@my-virtual-plain-text-workspace/', dtsAutoGen: 'virtual-workspace-declaration' }),
+  ],
+});
+```
+
+`virtual-workspace-declaration.d.ts` will be created in the project's root directory.
+
+### Enable Named Export
+
+```ts
+// vite.config.(t|j)s
+
+import { defineConfig } from 'vite';
+
+import plainText from 'vite-plugin-virtual-plain-text';
+
+export default defineConfig({
+  plugins: [
+    // passing the custom name of the named exporting variable
+    plainText({ virtualNamespace: '@my-virtual-plain-text-workspace/', namedExport: 'plainText' }),
+  ],
+});
+```
+
+```js
+// component.js
+
+import { plainText as LICENSE } from '@virtual:plain-text/LICENSE'
+
+console.log(LICENSE)
 ```
 
 ## License

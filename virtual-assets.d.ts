@@ -1,3 +1,4 @@
 declare module '@virtual:plain-text/*' {
-    export const plainText: string
+    const plainText: string
+    export default plainText
 }

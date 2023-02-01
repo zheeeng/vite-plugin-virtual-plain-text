@@ -3,7 +3,5 @@ node_modules
 *.local
 *.tgz
 *.js
+dist
 *.d.ts
-yarn-error.log
-!virtual-assets.d.ts
-index.jss
