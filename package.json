@@ -10,9 +10,16 @@
     "virtual assets"
   ],
   "repository": "https://github.com/zheeeng/vite-plugin-virtual-plain-text",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "license": "MIT",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "typings": "dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
+  },
   "scripts": {
     "dev": "vite playground",
     "prepublishOnly": "npm run build",
