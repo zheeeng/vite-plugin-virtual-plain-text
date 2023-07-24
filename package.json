@@ -10,7 +10,7 @@
     "virtual assets"
   ],
   "repository": "https://github.com/zheeeng/vite-plugin-virtual-plain-text",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -26,8 +26,8 @@
     "build": "tsup"
   },
   "files": [
-    "*.js",
-    "*.d.ts"
+    "**/*.js",
+    "**/*.d.ts"
   ],
   "devDependencies": {
     "@types/node": "^18.11.18",
